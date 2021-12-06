@@ -40,6 +40,9 @@ def main():
         statusMessage('Running script...')
         progressReset()
         
+        messageBox("Notice", "The plug-in saves the document before running. Continue?", icon=ICON_WARNING, button1=BUTTON_OK, button2=BUTTON_CANCEL)
+        saveDoc()
+        
         page_range = valueDialog('Specify page range', 'Specify Page Range (fx. 1-5)','1-' + str(currentPage()))
         page_range = page_range.split('-')
         page_range = (int(page_range[0]), int(page_range[1]))
